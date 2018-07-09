@@ -84,7 +84,7 @@ public class OpenTSDBMetricsReporterService implements Service {
       String attributeExpr = metricName.substring(metricName.lastIndexOf(":") + 1);
       List<MbeanAttributeValue> attributeValues = getMBeanAttributeValues(mbeanExpr, attributeExpr);
       for (MbeanAttributeValue attributeValue: attributeValues) {
-        LOG.info("put {} {} {}", openTSDBMetricName, System.currentTimeMillis(), attributeValue.value());
+        LOG.info("put {} {} {}", openTSDBMetricName, System.currentTimeMillis() / 1000, attributeValue.value());
       }
     }
   }

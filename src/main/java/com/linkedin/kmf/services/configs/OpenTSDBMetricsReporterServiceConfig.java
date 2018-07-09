@@ -22,8 +22,8 @@ public class OpenTSDBMetricsReporterServiceConfig extends AbstractConfig {
   public static final String REPORT_METRICS_DOC = CommonServiceConfig.REPORT_METRICS_DOC;
 
   public static final String OPEN_TSDB_METRICS_CONFIG = "report.metrics.opentsdb.list";
-  public static final String OPEN_TSDB_METRICS_CONFIG_DOC = "The name name of the metric in opentsdb"
-       + "This must be the same length of REPORT_METRICS_CONFIG and corresponds by index";
+  public static final String OPEN_TSDB_METRICS_DOC = "The openTSDB name of the metric. "
+       + "This must be the same length of REPORT_METRICS_CONFIG and corresponds by index.";
 
   public static final String REPORT_INTERVAL_SEC_CONFIG = CommonServiceConfig.REPORT_INTERVAL_SEC_CONFIG;
   public static final String REPORT_INTERVAL_SEC_DOC = CommonServiceConfig.REPORT_INTERVAL_SEC_DOC;
@@ -39,7 +39,7 @@ public class OpenTSDBMetricsReporterServiceConfig extends AbstractConfig {
               ConfigDef.Type.LIST,
               Arrays.asList(),
               ConfigDef.Importance.MEDIUM,
-              REPORT_METRICS_DOC)
+              OPEN_TSDB_METRICS_DOC)
       .define(REPORT_INTERVAL_SEC_CONFIG,
               ConfigDef.Type.INT,
               1,
